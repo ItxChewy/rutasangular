@@ -1,0 +1,27 @@
+<div class="navbar">
+    <ul id="menu">
+        <li>
+            <a [routerLink]="['/']"  >Home</a> |
+        </li>
+        <li>
+            <a *ngFor="let num of numeros" [routerLink]="['/tablamultiplicar', num]" >
+                Tabla de {{num}} |
+            </a>
+        </li>
+        <!-- <li>
+            <a [routerLink]="['/musica']" >Musica</a> |
+        </li>
+        <li>
+            <a [routerLink]="['/cine']" >Cine</a> |
+        </li>
+        <li>
+            <a [routerLink]="['/numerodoble/77']">Numero doble 77</a> |
+        </li>
+        <li>
+            <a [routerLink]="['/numerodoble/5']">Numero doble 5</a> |
+        </li>
+        <li>
+            <a [routerLink]="['/numerodoble/']">Numero doble parma</a>
+        </li> -->
+    </ul>
+</div>

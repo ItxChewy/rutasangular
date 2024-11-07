@@ -1,1 +1,503 @@
 /* You can add global styles to this file, and also import other style files */
+/* ---------- Global Styles ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 20px;
+  }
+  
+  /* ---------- Headings ---------- */
+  h1,
+  h2 {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.5rem auto;
+    background: linear-gradient(
+      90deg,
+      #ff8c00,
+      #0077ff,
+      #a60095,
+      #ff8c00
+    ); /* Degradado en bucle */
+    background-size: 300%; /* Aumentamos el tamaño para la animación */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.2em 0.5em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    animation: gradientMove 10s infinite linear alternate; /* Animación infinita */
+  }
+  
+  /* Sombra difuminada para resaltar el degradado */
+  h1::after,
+  h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    filter: blur(6px);
+    opacity: 0.7;
+    animation: gradientMove 5s infinite linear; /* Sombra sigue el degradado animado */
+  }
+  
+  /* Tamaños específicos para h1 y h2 */
+  h1 {
+    font-size: 2.25rem;
+    margin-top: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Animación del degradado */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* ---------- Navbar Styles ---------- */
+  .navbar {
+      display: flex;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #ff8c00, #4a90e2, #ff00e6, #ff8c00);
+      background-size: 300%;
+      animation: gradientNavbar 3s infinite linear alternate;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+
+    }
+    
+    .navbar-nav {
+      list-style-type: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar-nav li {
+      position: relative;
+      display: inline;
+    }
+    
+    .navbar-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 5px;
+      display: block;
+      text-align: center; /* Centramos los enlaces */
+    }
+    
+    .navbar-nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    /* ---------- Dropdown Styles ---------- */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown .dropbtn {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 5px;
+      display: block;
+      text-align: center; /* Centramos el texto del botón del desplegable */
+    }
+    
+    .dropdown .dropbtn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      z-index: 1;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      top: 100%;
+      left: 0;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left; /* Alineamos el texto del desplegable a la izquierda */
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    
+    /* Show the dropdown menu when hovering */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    /* ---------- Responsive Navbar for Mobile ---------- */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .navbar-nav {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+    
+      /* Aseguramos que el botón de desplegable esté centrado también en móvil */
+      .dropdown .dropbtn {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    
+    /* ---------- Navbar Gradient Animation ---------- */
+    @keyframes gradientNavbar {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    
+  
+  /* ---------- Table Styles ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    backgroFund-color: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Encabezado de la tabla */
+  th,
+  td {
+    padding: 1rem;
+    text-align: center; /* Centrado del texto */
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #555;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+  }
+  
+  th {
+    background: linear-gradient(
+      90deg,
+      #ff8c00,
+      #ff00e6
+    ); /* Gradiente de naranja a rosa */
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  td {
+    background-color: #f9f9f9; /* Fondo suave para las celdas */
+    color: #333; /* Color de texto de las celdas */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #f1f1f1; /* Fondo alterno para filas */
+  }
+  
+  /* Hover en las filas */
+  tr:hover td {
+    background-color: #eaf1fb; /* Efecto hover suave */
+  }
+  
+  /* Bordes redondeados para la tabla */
+  table th:first-child,
+  table td:first-child {
+    border-radius: 8px 0 0 8px; /* Bordes redondeados en las esquinas izquierdas */
+  }
+  
+  table th:last-child,
+  table td:last-child {
+    border-radius: 0 8px 8px 0; /* Bordes redondeados en las esquinas derechas */
+  }
+  
+  /* Agregar bordes suaves a las celdas */
+  td,
+  th {
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  th:last-child,
+  td:last-child {
+    border-right: none;
+  }
+  
+  /* Estilo adicional para la tabla */
+  caption {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* ---------- Image Styles ---------- */
+  img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  img#prueba {
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img#prueba:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* ---------- Form Styles ---------- */
+  form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="number"],
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="password"]:focus,
+  form input[type="number"]:focus,
+  form select:focus,
+  form textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  form input[type="submit"],
+  form button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover,
+  form button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+  }
+  
+  /* ---------- Estilos Generales para los Botones ---------- */
+  button,
+  .btn {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border: 2px solid transparent; /* Sin borde visible */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.75rem 1.5rem; /* Espaciado interior */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Mayúsculas */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      box-shadow 0.3s ease; /* Efecto al pasar el ratón */
+    display: inline-block;
+  }
+  
+  /* Efecto al pasar el ratón (hover) */
+  button:hover,
+  .btn:hover {
+    background-color: #357abd; /* Fondo más oscuro */
+    transform: translateY(-2px); /* Movimiento sutil hacia arriba */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Efecto al hacer clic (activo) */
+  button:active,
+  .btn:active {
+    background-color: #006f99; /* Fondo aún más oscuro */
+    transform: translateY(0); /* El botón vuelve a su posición original */
+    box-shadow: none; /* Elimina la sombra */
+  }
+  
+  /* Efecto al tener el foco (focus) */
+  button:focus,
+  .btn:focus {
+    outline: none; /* Elimina el borde por defecto */
+    box-shadow: 0 0 0 2px rgba(72, 132, 255, 0.6); /* Sombra azul alrededor del botón */
+  }
+  
+  /* ---------- Variantes de Botones (para distintos colores) ---------- */
+  
+  /* Botón Primario */
+  .btn-primary {
+    background-color: #4a90e2;
+  }
+  
+  .btn-primary:hover {
+    background-color: #357abd;
+  }
+  
+  /* Botón Secundario */
+  .btn-secondary {
+    background-color: #ff8c00;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #e07b00;
+  }
+  
+  /* Botón de Éxito */
+  .btn-success {
+    background-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Botón de Peligro */
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* Botón de Advertencia */
+  .btn-warning {
+    background-color: #ffc107;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Botón de Información */
+  .btn-info {
+    background-color: #17a2b8;
+  }
+  
+  .btn-info:hover {
+    background-color: #138496;
+  }
+  
+  /* Botón de Vacio (Transparente) */
+  .btn-transparent {
+    background-color: transparent;
+    color: #4a90e2; /* Texto azul */
+    border: 2px solid #4a90e2; /* Borde azul */
+  }
+  
+  .btn-transparent:hover {
+    background-color: #4a90e2;
+    color: white; /* Texto blanco al hacer hover */
+  }
+  
+  /* Botón Deshabilitado */
+  button:disabled,
+  .btn:disabled {
+    background-color: #e0e0e0; /* Fondo gris */
+    color: #9e9e9e; /* Texto gris */
+    cursor: not-allowed; /* No se puede hacer clic */
+    box-shadow: none; /* Elimina la sombra */
+  }
+  
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+  
